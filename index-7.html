@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пётр Терновский — Head of Digital / Product Owner / CIO</title>
+  <meta name="description" content="Пётр Терновский — 18+ лет в IT, 12 лет в финтехе. Руководитель цифрового развития, владелец продукта, CIO. Управлял продуктами с аудиторией 200k+/мес в УК Доходъ и Райффайзен Капитал.">
+  <meta name="keywords" content="Пётр Терновский, Product Owner, Head of Digital, CIO, руководитель проектов, финтех, IT руководитель, product manager, Москва">
+  <meta name="author" content="Пётр Терновский">
+  <meta property="og:title" content="Пётр Терновский — Head of Digital / Product Owner">
+  <meta property="og:description" content="18+ лет в IT, 12 лет в финтехе. Ищу роль руководителя продукта / CIO.">
+  <meta property="og:type" content="profile">
+  <link rel="canonical" href="https://anthroposoph.github.io/">
+  <!-- Preload critical fonts only -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --surface2: #18181f;
+      --border: rgba(255,255,255,0.07);
+      --accent: #e8ff47;
+      --accent2: #47b8ff;
+      --text: #e0e0ec;
+      --muted: #6b6b88;
+      --fd: 'Bebas Neue', sans-serif;
+      --fb: 'Inter', system-ui, sans-serif;
+      --fm: 'JetBrains Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--fb);
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── CONTACT BAR ── */
+    .cbar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 900;
+      background: rgba(10,10,15,0.95);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border);
+      padding: 7px 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .cbar-label {
+      font-family: var(--fm); font-size: 10px; color: var(--muted);
+      letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
+    }
+    .cbar-btns { display: flex; gap: 8px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 3px;
+      font-family: var(--fm); font-size: 11px; letter-spacing: 0.04em;
+      text-decoration: none; cursor: pointer; border: none; transition: all 0.18s;
+    }
+    .btn-a { background: var(--accent); color: #0a0a0f; }
+    .btn-a:hover { background: #d4e830; }
+    .btn-b { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-b:hover { border-color: var(--accent2); color: var(--accent2); }
+    .btn-c { background: transparent; color: var(--muted); }
+    .btn-c:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 40px 40px 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 75% 20%, rgba(232,255,71,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 55% at 10% 80%, rgba(71,184,255,0.05) 0%, transparent 50%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.007) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.007) 1px, transparent 1px),
+        radial-gradient(ellipse 1px 1px at 0 0, rgba(255,255,255,0.06) 0%, transparent 100%);
+      background-size: 64px 64px, 64px 64px, 16px 16px, 16px 16px, 64px 64px;
+    }
+    /* lithographic dot-hatch overlay on grid intersections */
+    .hero-grid::after {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        radial-gradient(circle 0.5px at 0px 0px, rgba(255,255,255,0.09) 0%, transparent 100%),
+        radial-gradient(circle 0.5px at 32px 32px, rgba(255,255,255,0.04) 0%, transparent 100%);
+      background-size: 64px 64px;
+    }
+    .hero-content { position: relative; max-width: 1100px; }
+    .hero-eyebrow {
+      font-family: var(--fm); font-size: 10px; color: var(--accent);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 20px; display: flex; align-items: center; gap: 12px;
+    }
+    .hero-eyebrow::before { content:''; width:36px; height:1px; background:var(--accent); }
+    .hero-name {
+      font-family: var(--fd);
+      font-size: clamp(52px, 10.5vw, 148px);
+      line-height: 0.92; letter-spacing: 0.02em; color: var(--text); margin-bottom: 6px;
+    }
+    .hero-name .accent { color: var(--accent); display: block; }
+    .hero-sub {
+      font-family: var(--fm); font-size: clamp(12px, 1.8vw, 15px);
+      color: var(--muted); margin-top: 24px; margin-bottom: 44px; letter-spacing: 0.04em;
+    }
+    .hero-sub strong { color: var(--accent2); font-weight: 400; }
+    .kpi-row { display: flex; gap: 36px; flex-wrap: wrap; }
+    .kpi { position: relative; cursor: default; }
+    .kpi-n {
+      font-family: var(--fd); font-size: 48px; line-height: 1; color: var(--text);
+    }
+    .kpi-n sup { font-size: 22px; color: var(--muted); }
+    .kpi-l { font-family: var(--fm); font-size: 9px; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 3px; }
+    .kpi:hover .kpi-tip { opacity: 1; transform: translateY(0); }
+    .kpi-tip {
+      position: absolute; bottom: calc(100% + 10px); left: 0;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-left: 2px solid var(--accent);
+      padding: 8px 12px; font-family: var(--fm); font-size: 10px;
+      color: var(--text); line-height: 1.6; white-space: nowrap;
+      opacity: 0; transform: translateY(5px);
+      transition: all 0.18s; pointer-events: none; z-index: 10;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 72px 40px; }
+    .divider { height: 1px; background: var(--border); margin: 0 40px; }
+    .sec-label {
+      font-family: var(--fm); font-size: 9px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 44px; display: flex; align-items: center; gap: 14px;
+    }
+    .sec-label::after { content:''; flex:1; height:1px; background:var(--border); }
+
+    /* ── COMPANIES ── */
+    .co-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2px;
+    }
+    .co-card {
+      background: var(--surface);
+      padding: 32px; position: relative; overflow: hidden;
+      transition: background 0.25s;
+    }
+    .co-card:hover { background: var(--surface2); }
+    .co-card::before {
+      content:''; position:absolute; top:0; left:0;
+      width:3px; height:0; background:var(--accent);
+      transition: height 0.35s;
+    }
+    .co-card:hover::before { height:100%; }
+    .co-period { font-family:var(--fm); font-size:9px; color:var(--muted); letter-spacing:0.1em; margin-bottom:10px; }
+    .co-name { font-family:var(--fd); font-size:26px; letter-spacing:0.04em; margin-bottom:5px; }
+    .co-role { font-size:12px; color:var(--accent2); font-weight:500; margin-bottom:13px; }
+    .co-desc { font-size:12px; color:var(--muted); line-height:1.75; }
+    .co-badge {
+      display:inline-block; margin-top:14px; padding:3px 9px;
+      background:rgba(232,255,71,0.07); border:1px solid rgba(232,255,71,0.18);
+      color:var(--accent); font-family:var(--fm); font-size:9px; letter-spacing:0.09em;
+    }
+    .co-card-open {
+      background: linear-gradient(135deg, rgba(232,255,71,0.05), transparent);
+    }
+
+    /* ── PROJECTS ── */
+    .proj-section { background: var(--surface); }
+    .proj-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .ptag {
+      padding: 8px 14px;
+      background: var(--bg); border: 1px solid var(--border);
+      font-size: 12px; color: var(--text); cursor: pointer;
+      border-radius: 2px; transition: all 0.18s; white-space: nowrap;
+      user-select: none;
+    }
+    .ptag:hover { border-color: var(--accent); color: var(--accent); }
+    .ptag.on { background: var(--accent); color: #0a0a0f; border-color: var(--accent); }
+    .proj-detail {
+      display: none; margin-top: 24px; padding: 22px 26px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      animation: fadein 0.25s ease;
+    }
+    .proj-detail.show { display: block; }
+    @keyframes fadein { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+    .proj-detail h3 { font-family:var(--fd); font-size:22px; letter-spacing:0.04em; margin-bottom:10px; }
+    .proj-detail p { font-size:13px; color:var(--muted); line-height:1.8; }
+    .tag-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
+    .mtag {
+      padding:3px 9px; border-radius:2px;
+      background:rgba(71,184,255,0.07); border:1px solid rgba(71,184,255,0.18);
+      color:var(--accent2); font-family:var(--fm); font-size:9px; letter-spacing:0.07em;
+    }
+
+    /* ── BUBBLES (Methods) ── */
+    .bubbles-wrap {
+      width: 100%; height: 400px; position: relative;
+      overflow: hidden; border: 1px solid var(--border); border-radius: 3px;
+    }
+    #bcanvas { display: block; width: 100%; height: 100%; }
+
+    /* ── RADAR / SKILLS ── */
+    .role-filter { display: flex; gap: 4px; margin-bottom: 36px; flex-wrap: wrap; }
+    .rbtn {
+      padding: 6px 14px; background: transparent;
+      border: 1px solid var(--border); color: var(--muted);
+      font-family: var(--fm); font-size: 10px; letter-spacing: 0.07em;
+      text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all 0.18s;
+    }
+    .rbtn.on, .rbtn:hover { background: var(--accent); color: #0a0a0f; border-color: var(--accent); }
+    .radar-grid { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: center; }
+    .radar-svg { width: 280px; flex-shrink: 0; }
+    .skill-list { display: flex; flex-direction: column; gap: 14px; }
+    .skill-row {
+      display: flex; align-items: center; gap: 12px;
+      transition: opacity 0.25s;
+    }
+    .skill-row.dim { opacity: 0.12; }
+    .skill-name { font-family: var(--fm); font-size: 10px; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.07em; width: 170px; flex-shrink: 0; }
+    .skill-bar-bg { flex:1; height:3px; background:var(--surface2); border-radius:2px; overflow:hidden; }
+    .skill-bar { height:100%; background:var(--accent); border-radius:2px;
+      transform:scaleX(0); transform-origin:left; transition: transform 0.9s ease; }
+    .skill-val { font-family:var(--fd); font-size:18px; color:var(--text); width:36px; text-align:right; flex-shrink:0; }
+
+    /* ── TECH STACK ── */
+    .tech-section { background: var(--surface); }
+    .tech-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ttag {
+      padding: 6px 13px; border: 1px solid var(--border);
+      font-family: var(--fm); color: var(--muted); border-radius: 2px;
+      cursor: default; transition: all 0.2s;
+    }
+    .ttag:hover { color: var(--text); border-color: rgba(255,255,255,0.18); transform: scale(1.04); }
+    .ttag.t1 { font-size: 14px; color: var(--text); border-color: rgba(255,255,255,0.14); }
+    .ttag.t2 { font-size: 12px; color: rgba(224,224,236,0.72); }
+    .ttag.t3 { font-size: 10px; }
+
+    /* ── METRICS ── */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2px;
+    }
+    .mcard {
+      background: var(--surface); padding: 28px 24px;
+      position: relative; overflow: hidden; cursor: default; transition: background 0.22s;
+    }
+    .mcard:hover { background: var(--surface2); }
+    .mcard::after {
+      content:''; position:absolute; bottom:0; left:0; right:0;
+      height:2px; background:linear-gradient(90deg, var(--accent), transparent);
+      transform:scaleX(0); transform-origin:left; transition:transform 0.35s;
+    }
+    .mcard:hover::after { transform:scaleX(1); }
+    .mnum { font-family:var(--fd); font-size:44px; line-height:1; color:var(--accent); }
+    .munit { font-size:18px; color:var(--muted); }
+    .mdesc { font-size:11px; color:var(--muted); margin-top:8px; line-height:1.6; }
+
+    /* ── TIMELINE ── */
+    .tl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+    .tl { position:relative; padding-left:28px; }
+    .tl::before { content:''; position:absolute; left:0; top:6px; bottom:0; width:1px; background:var(--border); }
+    .tl-item { position:relative; padding-bottom:32px; }
+    .tl-item::before {
+      content:''; position:absolute; left:-32px; top:5px;
+      width:7px; height:7px; border-radius:50%; background:var(--accent);
+      box-shadow:0 0 10px rgba(232,255,71,0.35);
+    }
+    .tl-year { font-family:var(--fm); font-size:9px; color:var(--muted); letter-spacing:0.1em; margin-bottom:4px; }
+    .tl-title { font-size:14px; font-weight:600; color:var(--text); margin-bottom:3px; }
+    .tl-sub { font-size:11px; color:var(--muted); }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; }
+    .about-txt { font-size:13px; color:var(--muted); line-height:1.9; }
+    .about-txt strong { color:var(--text); font-weight:500; }
+    .interests { display:flex; flex-wrap:wrap; gap:7px; margin-top:20px; }
+    .itag {
+      padding:5px 12px; border:1px solid var(--border);
+      font-family:var(--fm); font-size:10px; color:var(--muted); border-radius:20px;
+    }
+
+    /* ── REVEAL ── */
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.in { opacity:1; transform:translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero { padding: 30px 20px 60px; }
+      .hero-name { font-size: clamp(46px, 12vw, 80px); }
+      .wrap { padding: 52px 20px; }
+      .divider { margin: 0 20px; }
+      .co-grid { grid-template-columns: 1fr; }
+      .kpi-row { gap: 20px; }
+      .kpi-n { font-size: 38px; }
+      .kpi-tip { white-space: normal; max-width: 220px; }
+      .proj-tags { flex-wrap: wrap; overflow-x: visible; padding-bottom: 0; scroll-snap-type: none; }
+      .ptag { flex-shrink: 1; flex-basis: calc(33.333% - 6px); min-width: 0; text-align: center; font-size: 11px; padding: 7px 8px; }
+      .radar-grid { grid-template-columns: 1fr; }
+      .radar-svg { width: 240px; margin: 0 auto; display: block; }
+      .skill-name { width: 120px; font-size: 9px; }
+      .tl-grid { grid-template-columns: 1fr; gap: 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .cbar-label { display: none; }
+      .cbar { padding: 6px 16px; }
+      .bubbles-wrap { height: 460px; }
+    }
+    @media (max-width: 480px) {
+      .hero-name { font-size: clamp(44px, 13.5vw, 72px); }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── CTA BLOCK ── */
+    .cta-block {
+      margin-top: 32px;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+    }
+    .cta-text {
+      font-family: var(--fm); font-size: 11px; color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 28px; background: var(--accent); color: #0a0a0f;
+      font-family: var(--fd); font-size: 24px; letter-spacing: 0.1em;
+      text-decoration: none; border-radius: 3px;
+      transition: background 0.18s, transform 0.18s;
+    }
+    .cta-btn:hover { background: #d4e830; transform: translateY(-2px); }
+    .cta-arrow {
+      display: inline-block;
+      animation: bounce-arrow 1.1s ease-in-out infinite;
+      font-size: 22px; line-height: 1;
+    }
+    @keyframes bounce-arrow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- CONTACT BAR -->
+<div class="cbar">
+  <span class="cbar-label">Открыт к предложениям · Москва / СПб / Remote</span>
+  <div class="cbar-btns">
+    <a href="https://t.me/Anthroposoph" class="btn btn-a" target="_blank" rel="noopener">✈ Telegram</a>
+    <a href="mailto:domvovse@gmail.com" class="btn btn-b">✉ Email</a>
+    <a href="tel:+79313967710" class="btn btn-c">📞</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" aria-label="Представление">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Head of Digital · Product Owner · CIO</div>
+    <h1 class="hero-name">
+      Пётр<span class="accent">Терно<span style="color:var(--accent);font-family:var(--fd)">₿</span>ский</span>
+    </h1>
+    <p class="hero-sub">
+      <strong>18+ лет</strong> в IT · <strong>12 лет</strong> в финтехе · Управляющие компании с AUM 120–150 млрд ₽
+    </p>
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="kpi-n">0</div>
+        <div class="kpi-l">инцидентов</div>
+        <div class="kpi-tip">За всё время работы — ни одного<br>критического инцидента в продакшене.</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-n">1<sup>млн</sup></div>
+        <div class="kpi-l">транзакций</div>
+        <div class="kpi-tip">Финансовые транзакции через платформы<br>под моим продуктовым управлением.</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-n">12<sup>+</sup></div>
+        <div class="kpi-l">человек в команде</div>
+        <div class="kpi-tip">Управлял кросс-функциональными unit-командами:<br>разработка, дизайн, аналитика, маркетинг.</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-n">35<sup>k</sup></div>
+        <div class="kpi-l">WAU</div>
+        <div class="kpi-tip">Еженедельная активная аудитория (WAU)<br>цифровых сервисов под управлением.</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-n">8</div>
+        <div class="kpi-l">лет в банке</div>
+        <div class="kpi-tip">8 лет в инвестиционных компаниях<br>банковской группы Райффайзен.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMPANIES -->
+<section class="wrap reveal" aria-label="Опыт работы">
+  <div class="sec-label">Опыт работы</div>
+  <div class="co-grid">
+    <article class="co-card">
+      <div class="co-period">2022 — 2026 · 4 года</div>
+      <div class="co-name">УК «Доходъ»</div>
+      <div class="co-role">Руководитель департамента цифрового развития</div>
+      <div class="co-desc">Цифровое развитие группы: УК, брокер, спецдеп, консалтинг. Продуктовые метрики и конверсии в клиентских сервисах. ЛК b2b/b2c, mobile, CRM, онбординг, SEO, email-маркетинг, AI-интеграции.</div>
+      <span class="co-badge">AUM 120+ млрд ₽</span>
+    </article>
+    <article class="co-card">
+      <div class="co-period">2013 — 2021 · 8 лет</div>
+      <div class="co-name">Райффайзен Капитал</div>
+      <div class="co-role">Зам. начальника отдела развития технологических процессов</div>
+      <div class="co-desc">Полная автоматизация УК: ЛК b2b для менеджеров Райффайзенбанка, ЛК b2c для физлиц. Все операции по ДУ, ИИС, ПИФ. Enterprise-инфраструктура, ИБ, виртуализация.</div>
+      <span class="co-badge">AUM 150+ млрд ₽</span>
+    </article>
+    <article class="co-card">
+      <div class="co-period">2007 — 2013 · 6 лет</div>
+      <div class="co-name">ГК «Инфорком»</div>
+      <div class="co-role">Инженер-программист, системный администратор</div>
+      <div class="co-desc">Поддержка корпоративной сети 280+ пользователей. Разработка ЛК для топливной компании (онлайн-оплата на АЗС по РФ и СНГ). IP-телефония Asterisk, закупки, инфраструктурные проекты.</div>
+      <span class="co-badge">Enterprise IT</span>
+    </article>
+    <article class="co-card co-card-open">
+      <div class="co-period">Сейчас</div>
+      <div class="co-name" style="color:var(--accent)">Открыт к офферам</div>
+      <div class="co-role">Head of Digital / Product Owner / CIO</div>
+      <div class="co-desc">Интересуют позиции в финтехе, блокчейне, ЦФА, proptech или далекоидущих / социально значимых проектах.</div>
+      <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px">
+        <span style="font-family:var(--fm);font-size:9px;color:var(--accent2);padding:3px 9px;border:1px solid rgba(71,184,255,0.25);border-radius:20px">#Москва</span>
+        <span style="font-family:var(--fm);font-size:9px;color:var(--accent2);padding:3px 9px;border:1px solid rgba(71,184,255,0.25);border-radius:20px">#СанктПетербург</span>
+        <span style="font-family:var(--fm);font-size:9px;color:var(--accent2);padding:3px 9px;border:1px solid rgba(71,184,255,0.25);border-radius:20px">#remote</span>
+        <span style="font-family:var(--fm);font-size:9px;color:var(--accent2);padding:3px 9px;border:1px solid rgba(71,184,255,0.25);border-radius:20px">#гибрид</span>
+      </div>
+      <div style="margin-top:12px">
+        <a href="https://t.me/Anthroposoph" class="btn btn-a" target="_blank" rel="noopener" style="font-size:10px;padding:6px 13px">✈ Написать</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<div class="proj-section">
+  <div class="wrap reveal">
+    <div class="sec-label">Продукты и проекты</div>
+    <div class="proj-tags" id="ptags">
+      <div class="ptag" data-id="lk">Личные кабинеты b2b/b2c</div>
+      <div class="ptag" data-id="mobile">Mobile-приложение</div>
+      <div class="ptag" data-id="crm">CRM-системы</div>
+      <div class="ptag" data-id="seo">SEO / Органический трафик</div>
+      <div class="ptag" data-id="onboard">Онбординг клиентов</div>
+      <div class="ptag" data-id="pif">ПИФы / ЗПИФ / БПИФ</div>
+      <div class="ptag" data-id="du">Доверительное управление</div>
+      <div class="ptag" data-id="iis">ИИС</div>
+      <div class="ptag" data-id="dashboard">Дашборды и метрики</div>
+      <div class="ptag" data-id="email">Email-маркетинг</div>
+      <div class="ptag on" data-id="ai">AI-интеграции</div>
+      <div class="ptag" data-id="edo">ЭДО / Безбумажный офис</div>
+      <div class="ptag" data-id="gosapi">Гос. интеграции (ЕСИА, СМЭВ)</div>
+      <div class="ptag" data-id="infra">Виртуализация инфраструктуры</div>
+      <div class="ptag" data-id="ib">Информационная безопасность</div>
+      <div class="ptag" data-id="kids">Детский инвестпортфель</div>
+      <div class="ptag" data-id="pension">Пенсионные продукты</div>
+      <div class="ptag" data-id="acquiring">Эквайринг / QR</div>
+    </div>
+    <div class="proj-detail" id="pdetail">
+      <h3 id="ptitle"></h3>
+      <p id="pdesc"></p>
+      <div class="tag-row" id="ptags2"></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- METHODS BUBBLES -->
+<section class="wrap reveal" aria-label="Методы управления">
+  <div class="sec-label">Методы управления</div>
+  <div class="bubbles-wrap">
+    <canvas id="bcanvas"></canvas>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS / RADAR -->
+<section class="wrap reveal" aria-label="Компетенции">
+  <div class="sec-label">Ключевые компетенции</div>
+  <div class="role-filter">
+    <button class="rbtn on" data-role="all">Все</button>
+    <button class="rbtn" data-role="pm">Product Manager</button>
+    <button class="rbtn" data-role="po">Product Owner</button>
+    <button class="rbtn" data-role="head">Head of Digital</button>
+  </div>
+  <div class="radar-grid">
+    <svg class="radar-svg" viewBox="0 0 280 280" aria-hidden="true">
+      <circle cx="140" cy="140" r="105" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <circle cx="140" cy="140" r="79" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <circle cx="140" cy="140" r="53" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <circle cx="140" cy="140" r="26" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="140" y1="140" x2="140" y2="35" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <line x1="140" y1="140" x2="231" y2="87" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <line x1="140" y1="140" x2="231" y2="193" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <line x1="140" y1="140" x2="140" y2="245" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <line x1="140" y1="140" x2="49" y2="193" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <line x1="140" y1="140" x2="49" y2="87" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <polygon points="140,38 226,89 222,190 140,238 58,190 60,90"
+        fill="rgba(232,255,71,0.08)" stroke="var(--accent)" stroke-width="1.5"/>
+      <circle cx="140" cy="140" r="3.5" fill="var(--accent)" opacity="0.7"/>
+    </svg>
+    <div class="skill-list" id="skillList">
+      <div class="skill-row" data-roles="pm po head">
+        <span class="skill-name">Product Management</span>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:95%"></div></div>
+        <span class="skill-val">95</span>
+      </div>
+      <div class="skill-row" data-roles="pm po head">
+        <span class="skill-name">Analytics & Metrics</span>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:88%"></div></div>
+        <span class="skill-val">88</span>
+      </div>
+      <div class="skill-row" data-roles="po head">
+        <span class="skill-name">Finance Domain</span>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:80%"></div></div>
+        <span class="skill-val">80</span>
+      </div>
+      <div class="skill-row" data-roles="head pm">
+        <span class="skill-name">Team Leadership</span>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:90%"></div></div>
+        <span class="skill-val">90</span>
+      </div>
+      <div class="skill-row" data-roles="pm po head">
+        <span class="skill-name">AI Tools</span>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:85%"></div></div>
+        <span class="skill-val">85</span>
+      </div>
+      <div class="skill-row" data-roles="head po">
+        <span class="skill-name">Automation</span>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:82%"></div></div>
+        <span class="skill-val">82</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TECH STACK -->
+<div class="tech-section">
+  <div class="wrap reveal">
+    <div class="sec-label">Технологический стек</div>
+    <div class="tech-wrap">
+      <span class="ttag t1">Kubernetes</span>
+      <span class="ttag t1">PostgreSQL</span>
+      <span class="ttag t1">Vue 3</span>
+      <span class="ttag t1">TypeScript</span>
+      <span class="ttag t2">RabbitMQ</span>
+      <span class="ttag t2">Redis</span>
+      <span class="ttag t2">MongoDB</span>
+      <span class="ttag t2">nginx</span>
+      <span class="ttag t2">PHP</span>
+      <span class="ttag t2">Python</span>
+      <span class="ttag t2">JavaScript</span>
+      <span class="ttag t2">MinIO S3</span>
+      <span class="ttag t2">Grafana</span>
+      <span class="ttag t2">Swagger</span>
+      <span class="ttag t3">Jira</span>
+      <span class="ttag t3">Confluence</span>
+      <span class="ttag t3">Figma</span>
+      <span class="ttag t3">MySQL</span>
+      <span class="ttag t3">MS SQL</span>
+      <span class="ttag t3">Oracle</span>
+      <span class="ttag t3">VMware vSphere</span>
+      <span class="ttag t3">Asterisk</span>
+      <span class="ttag t3">1C Рарус</span>
+      <span class="ttag t3">Bitrix24</span>
+      <span class="ttag t3">ELMA365</span>
+      <span class="ttag t3">Я.Метрика</span>
+      <span class="ttag t3">Google Analytics</span>
+      <span class="ttag t3">ChatGPT</span>
+      <span class="ttag t3">Perplexity</span>
+      <span class="ttag t3">MidJourney</span>
+      <span class="ttag t3">DeepSeek</span>
+      <span class="ttag t3">dadata</span>
+      <span class="ttag t3">СМЭВ / ЕСИА / ЦПГ</span>
+      <span class="ttag t3">Blockchain</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- METRICS -->
+<section class="wrap reveal" aria-label="Числа и достижения">
+  <div class="sec-label">В цифрах</div>
+  <div class="metrics-grid">
+    <div class="mcard">
+      <div class="mnum">280<span class="munit">+</span></div>
+      <div class="mdesc">сотрудников (20+ серверов)</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">200<span class="munit">k</span></div>
+      <div class="mdesc">уникальных пользователей / месяц на платформах под управлением</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">150<span class="munit">+</span></div>
+      <div class="mdesc">млрд ₽ AUM в Райффайзен Капитал</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">120<span class="munit">+</span></div>
+      <div class="mdesc">млрд ₽ AUM в УК ДОХОДЪ</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">18<span class="munit">+</span></div>
+      <div class="mdesc">лет в IT: от системного администрирования до цифровой стратегии</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">12<span class="munit">+</span></div>
+      <div class="mdesc">человек в команде под прямым управлением</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">Top<span class="munit">3</span></div>
+      <div class="mdesc">позиций в поисковиках — результат SEO-проекта</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">0</div>
+      <div class="mdesc">критических инцидентов за всё время работы</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TIMELINE / EDUCATION -->
+<section class="wrap reveal" aria-label="Образование">
+  <div class="sec-label">Образование и рост</div>
+  <div class="tl-grid">
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-year">2021</div>
+        <div class="tl-title">Основы цифровой трансформации</div>
+        <div class="tl-sub">ВШГУ РАНХиГС, Центр ЦТ</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2019</div>
+        <div class="tl-title">Blockchain and Money</div>
+        <div class="tl-sub">MIT, проф. Gary Gensler</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2017</div>
+        <div class="tl-title">HPE 3PAR StoreServ Management</div>
+        <div class="tl-sub">Hewlett-Packard Enterprise</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2016</div>
+        <div class="tl-title">VMware 6 Administration</div>
+        <div class="tl-sub">Специалист при МГТУ Бауманки</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2010</div>
+        <div class="tl-title">Современные информационные технологии</div>
+        <div class="tl-sub">Специалист при МГТУ Бауманки</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2007</div>
+        <div class="tl-title">Оптико-электронные приборы и системы</div>
+        <div class="tl-sub">МГТУ МИРЭА, Москва</div>
+      </div>
+    </div>
+    <div>
+      <p class="about-txt">
+        Регулярно посещаю конференции: <strong>Финополис</strong>, <strong>ZeroNights</strong>, международные форумы по ИБ и финтеху (Швейцария, Франция, Эстония). Слежу за трендами в регулировании, AI и блокчейне.
+      </p>
+      <p class="about-txt" style="margin-top:14px">
+        Использую в работе <strong>Claude Code</strong>, Claude Design, gstack.
+      </p>
+      <p class="about-txt" style="margin-top:14px">
+        Изучаю нейромаркетинг и поведенческую экономику. Слушаю Роберта Сапольски, Валерия Петухова. Увлечён токенизацией активов и ЦФА.
+      </p>
+      <p class="about-txt" style="margin-top:14px">
+        Способен провести аудит текущих бизнес-процессов компании в части ИТ и предложить концепцию развития компании&nbsp;/ команды&nbsp;/ продукта.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section class="wrap reveal" style="padding-bottom:120px" aria-label="О себе">
+  <div class="sec-label">О себе</div>
+  <div class="about-grid">
+    <div>
+      <p class="about-txt">
+        Я — <strong>сплав менеджера и инженера</strong>. Вижу бизнес-процессы насквозь, говорю на одном языке с UX/UI-дизайнерами, разработчиками и C-level.
+      </p>
+      <p class="about-txt" style="margin-top:13px">
+        Залог успешного проекта — <strong>доброжелательная команда</strong>, проактивное управление и <strong>фокус на результат</strong>. Готов войти в проект на любом этапе: аудит → концепция → запуск → масштабирование.
+      </p>
+      <div class="interests">
+        <span class="itag">⛓ Blockchain</span>
+        <span class="itag">🪙 ЦФА</span>
+        <span class="itag">🤖 AI-first</span>
+        <span class="itag">📈 Финтех</span>
+        <span class="itag">🧠 Нейромаркетинг</span>
+        <span class="itag">🌐 Квантовые вычисления</span>
+      </div>
+    </div>
+    <div>
+      <p class="about-txt">
+        Хочу работать с <strong>интересными людьми</strong>. Готов к релокации, командировкам, гибриду. Английский B1.
+      </p>
+      <div class="cta-block">
+        <div class="cta-text">Напишите мне — отвечу в тот же день</div>
+        <a href="https://t.me/Anthroposoph" class="cta-btn" target="_blank" rel="noopener">
+          <span>ЖМИ</span>
+          <span class="cta-arrow">↓</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ── PROJECT DATA ── */
+const PD = {
+  lk:      { t:'Личные кабинеты b2b / b2c', d:'Разработка и развитие ЛК для менеджеров Райффайзенбанка (b2b) и физлиц-клиентов (b2c). Полная автоматизация: операции, справки и отчёты по ДУ, ИИС, ПИФ. В ДОХОДЪ — интеграции с AI-распознаванием документов, dadata, Росреестром.', tags:['Vue 3','TypeScript','PHP','PostgreSQL','REST API','CJM','UX/UI','CUSTDEV'] },
+  mobile:  { t:'Mobile-приложение', d:'Продуктовое управление мобильным приложением ДОХОДЪ. Метрики вовлечённости, конверсия онбординга, автопополнение и активация пользователей после открытия счёта.', tags:['Product Metrics','Funnel Optimization','Push Notifications','Analytics','A/B тест'] },
+  crm:     { t:'CRM-системы', d:'Внедрение и развитие CRM для клиентского сервиса, продаж и маркетинга. BPMSoft и ELMA365. Автоматизация клиентского пути, сценарии для колл-центра, настройка воронок.', tags:['ELMA365','BPMSoft','Bitrix24','BPMN','Автоматизация'] },
+  seo:     { t:'SEO и органический трафик', d:'Полноценное SEO web/mobile с выводом ключевых запросов в топ-3. Рост органики, интеграция с Я.Метрикой и Google Analytics, оптимизация конверсионных воронок.', tags:['SEO','Я.Метрика','Google Analytics','Similarweb','Email-маркетинг','Конверсии'] },
+  onboard: { t:'Онбординг клиентов', d:'Проектирование и оптимизация клиентского онбординга: от первого касания до открытия лицевого счёта. Снижение отказов, AI-проверка документов, интеграция с ЕСИА.', tags:['СМЭВ','AI-распознавание','ЕСИА','dadata','KYC','Конверсии','CJM'] },
+  pif:     { t:'ЗПИФ / БПИФ / ОПИФ', d:'Создание инвестиционных сервисов для закрытых, биржевых и открытых ПИФов. Калькуляторы доходности, онлайн-подписка, интеграция с реестродержателями и спецдепозитарием.', tags:['Финансовые продукты','REST API','Калькуляторы','Спецдеп','Регулятор (ЦБ)'] },
+  du:      { t:'Доверительное управление', d:'Сервисы для клиентов ДУ: отчётность, справки, сделки — всё в ЛК b2c. ЭДО с контрагентами, интеграции с 1С Рарус/Аванкор.', tags:['ЭДО','1C Рарус','ПОД/ФТ','Отчётность','Спецдеп'] },
+  iis:     { t:'ИИС', d:'Полный цикл онлайн-операций по ИИС в ЛК. Открытие счёта, пополнение, налоговый вычет, справки для ФНС.', tags:['ИИС','ФНС','Налоговый вычет','UX','CJM'] },
+  dashboard:{ t:'Дашборды и метрики', d:'Операционные дашборды для управления клиентским сервисом и маркетингом. Grafana, ключевые метрики: DAU, конверсии, CR/CRR, LTV.', tags:['Grafana','Я.Метрика','Google Analytics','OKR/KPI','SQL-отчёты'] },
+  email:   { t:'Email-маркетинг', d:'Платформа email-маркетинга, сегментация базы, триггерные рассылки. Годовой медиаплан и кампания для Райффайзен Капитал с охватом ЦА по РФ.', tags:['Email-платформа','Сегментация','Триггеры','Медиаплан','HNWI'] },
+  ai:      { t:'AI-интеграции', d:'AI-first. Оптимизация рутины команды с помощью нейронных сетей: Claude, Abacus, Nano Banana, Pomelli, ChatGPT, Perplexity, DeepSeek, MidJourney et cetera. Опыт приобщения команды к использованию AI-инструментов для решения практических задач.', tags:['Claude','ChatGPT','Perplexity','DeepSeek','MidJourney','Abacus','Prompt Eng.','AI-first'] },
+  edo:     { t:'ЭДО / Безбумажный офис', d:'Юридически значимый ЭДО по 63-ФЗ, 115-ФЗ, 444-П. Шифрование документов, интеграция со спецдепозитариями. СКЗИ, КЭП, ЭДО-операторы.', tags:['63-ФЗ','115-ФЗ','СКЗИ','КЭП','ЭДО-оператор','Криптография'] },
+  gosapi:  { t:'Гос. интеграции (ЕСИА, СМЭВ, ЦПГ)', d:'ЕСИА (Госуслуги), СМЭВ, ЦПГ, Росреестр, Росфинмониторинг. Отчётность в ФНС РФ и IRS USA. Взаимодействие с регулятором (ЦБ).', tags:['ЕСИА','СМЭВ','ЦПГ','Росреестр','ЦБ','Росфинмониторинг','ФНС / IRS'] },
+  infra:   { t:'Виртуализация инфраструктуры', d:'Полная миграция и виртуализация всех систем УК Райффайзен Капитал на VMware vSphere. Блейды HPE, СХД 3PAR, маршрутизаторы Cisco. Управление жизненным циклом оборудования.', tags:['VMware vSphere','HPE 3PAR','Cisco','Oracle','Microsoft','Bloomberg'] },
+  ib:      { t:'Информационная безопасность', d:'Политики ИБ: DLP, антивирусы, сканеры уязвимостей, СКЗИ. Соответствие требованиям ПОД/ФТ/ФРОМУ, 152-ФЗ, 757-П. Вёл проекты по ИБ.', tags:['152-ФЗ','757-П','DLP','СКЗИ','ПОД/ФТ','ИБ-проекты','ZeroNights'] },
+  kids:    { t:'Детский инвестиционный портфель', d:'Инициатива по созданию сервиса для детских инвестиционных портфелей в ДОХОДЪ. Проектирование продукта, UX для родителей, MVP.', tags:['Инициатива','UX','CJM','MVP','Продуктовая стратегия'] },
+  pension: { t:'Пенсионные продукты', d:'Создание сервиса для пенсионных финансовых продуктов и управления личными финансами (pensia.ru). Проектирование сценариев, интеграции, методология.', tags:['pensia.ru','НПФ','Личные финансы','Онбординг'] },
+  acquiring:{ t:'Эквайринг и QR-платежи', d:'Интернет-эквайринг и QR-оплата. Интеграция с платёжными системами, работа с банками-эквайерами.', tags:['Эквайринг','QR','Платёжные системы','REST API','PCI DSS'] }
+};
+
+/* ── PROJECT TAGS CLICK ── */
+document.getElementById('ptags').addEventListener('click', function(e) {
+  var tag = e.target.closest('.ptag');
+  if (!tag) return;
+  var id = tag.dataset.id;
+  var p = PD[id];
+  if (!p) return;
+  this.querySelectorAll('.ptag').forEach(function(t){ t.classList.remove('on'); });
+  tag.classList.add('on');
+  var det = document.getElementById('pdetail');
+  document.getElementById('ptitle').textContent = p.t;
+  document.getElementById('pdesc').textContent = p.d;
+  document.getElementById('ptags2').innerHTML = p.tags.map(function(t){ return '<span class="mtag">'+t+'</span>'; }).join('');
+  det.classList.remove('show');
+  void det.offsetWidth; // reflow to restart animation
+  det.classList.add('show');
+  // On mobile, scroll detail into view
+  if (window.innerWidth < 768) {
+    setTimeout(function(){ det.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 50);
+  }
+});
+
+/* ── INIT AI PROJECT ON LOAD ── */
+(function() {
+  var p = PD['ai'];
+  var det = document.getElementById('pdetail');
+  document.getElementById('ptitle').textContent = p.t;
+  document.getElementById('pdesc').textContent = p.d;
+  document.getElementById('ptags2').innerHTML = p.tags.map(function(t){ return '<span class="mtag">'+t+'</span>'; }).join('');
+  det.classList.add('show');
+})();
+
+/* ── ROLE FILTER ── */
+document.querySelector('.role-filter').addEventListener('click', function(e) {
+  var btn = e.target.closest('.rbtn');
+  if (!btn) return;
+  this.querySelectorAll('.rbtn').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+  var role = btn.dataset.role;
+  document.querySelectorAll('.skill-row').forEach(function(row) {
+    var roles = row.dataset.roles || '';
+    row.classList.toggle('dim', role !== 'all' && !roles.includes(role));
+  });
+});
+
+/* ── SKILL BARS ANIMATE ON SCROLL ── */
+var barsAnimated = false;
+var skillObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting && !barsAnimated) {
+      barsAnimated = true;
+      document.querySelectorAll('.skill-bar').forEach(function(b) {
+        b.style.transform = 'scaleX(1)';
+      });
+      skillObs.disconnect();
+    }
+  });
+}, { threshold: 0.2 });
+var skillSec = document.getElementById('skillList');
+if (skillSec) skillObs.observe(skillSec);
+
+/* ── SCROLL REVEAL ── */
+var ro = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      ro.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(function(el){ ro.observe(el); });
+
+/* ── BUBBLES (METHODS) ── */
+(function() {
+  var canvas = document.getElementById('bcanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+
+  var METHODS = [
+    'Agile / Scrum','PMBOK','Kanban','Product Roadmap','Backlog Grooming',
+    'Story Mapping','CJM','JTBD','CUSTDEV','SWOT','KANO / MoSCoW','RAT',
+    'MVP','Unit-экономика','BPMN / UML','Стейкхолдер-мнмт','Риск-менеджмент',
+    'Wireframe / Mockup','A/B-тест','Ретроспективы',
+    'Check-листы','SLA','DRP / Backup'
+  ];
+  var COLORS = ['accent','blue','white'];
+  var W, H, bubbles = [], raf;
+
+  function resize() {
+    W = canvas.offsetWidth;
+    H = canvas.offsetHeight;
+    canvas.width = W;
+    canvas.height = H;
+  }
+
+  function makeBubble(i) {
+    var r = 32 + Math.random() * 24;
+    var col = COLORS[Math.floor(Math.random() * COLORS.length)];
+    return {
+      text: METHODS[i % METHODS.length],
+      r: r,
+      x: r + Math.random() * (W - r * 2),
+      y: H + r + Math.random() * H * 0.6,
+      vy: -(0.2 + Math.random() * 0.25),
+      vx: (Math.random() - 0.5) * 0.15,
+      op: 0.65 + Math.random() * 0.3,
+      phase: Math.random() * Math.PI * 2,
+      col: col
+    };
+  }
+
+  function init() {
+    resize();
+    bubbles = METHODS.map(function(_, i) { return makeBubble(i); });
+    // stagger start heights
+    bubbles.forEach(function(b, i) {
+      b.y = H - (i / bubbles.length) * H * 1.3 - b.r;
+    });
+  }
+
+  function drawBubble(b) {
+    b.phase += 0.004;
+    b.x += b.vx + Math.sin(b.phase) * 0.28;
+    b.y += b.vy;
+    if (b.x - b.r < 0) { b.x = b.r; b.vx = Math.abs(b.vx); }
+    if (b.x + b.r > W) { b.x = W - b.r; b.vx = -Math.abs(b.vx); }
+    if (b.y + b.r < 0) {
+      b.x = b.r + Math.random() * (W - b.r * 2);
+      b.y = H + b.r + Math.random() * 40;
+    }
+
+    ctx.save();
+    ctx.globalAlpha = b.op;
+    ctx.beginPath();
+    ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+
+    var g = ctx.createRadialGradient(b.x - b.r*0.3, b.y - b.r*0.3, b.r*0.1, b.x, b.y, b.r);
+    if (b.col === 'accent') {
+      g.addColorStop(0, 'rgba(232,255,71,0.18)');
+      g.addColorStop(1, 'rgba(232,255,71,0.03)');
+      ctx.strokeStyle = 'rgba(232,255,71,0.32)';
+    } else if (b.col === 'blue') {
+      g.addColorStop(0, 'rgba(71,184,255,0.15)');
+      g.addColorStop(1, 'rgba(71,184,255,0.02)');
+      ctx.strokeStyle = 'rgba(71,184,255,0.28)';
+    } else {
+      g.addColorStop(0, 'rgba(255,255,255,0.07)');
+      g.addColorStop(1, 'rgba(255,255,255,0.01)');
+      ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    }
+    ctx.fillStyle = g;
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    ctx.restore();
+
+    // label
+    ctx.save();
+    ctx.globalAlpha = b.op;
+    var fs = Math.max(9, b.r * 0.37);
+    ctx.font = fs + "px 'JetBrains Mono', monospace";
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = b.col === 'accent' ? '#e8ff47' : b.col === 'blue' ? '#47b8ff' : 'rgba(224,224,236,0.82)';
+    var parts = b.text.split(' / ');
+    if (parts.length > 1 && b.r > 40) {
+      var lh = fs * 1.25;
+      parts.forEach(function(part, pi) {
+        ctx.fillText(part, b.x, b.y + (pi - (parts.length - 1) / 2) * lh);
+      });
+    } else {
+      ctx.fillText(b.text, b.x, b.y);
+    }
+    ctx.restore();
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    bubbles.forEach(drawBubble);
+    raf = requestAnimationFrame(loop);
+  }
+
+  // Only run when visible
+  var visObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        if (!raf) loop();
+      } else {
+        cancelAnimationFrame(raf);
+        raf = null;
+      }
+    });
+  }, { threshold: 0.01 });
+
+  init();
+  visObs.observe(canvas);
+
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      cancelAnimationFrame(raf);
+      raf = null;
+      init();
+      loop();
+    }, 200);
+  });
+})();
+</script>
+</body>
+</html>
